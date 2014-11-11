@@ -1,5 +1,5 @@
 {
-  "name": "openAgile.githubCommits",
+  "name": "githubCommits",
   "version": "0.0.1",
   "description": "A github commit stream integration plugin.",
   "main": "index.js",
