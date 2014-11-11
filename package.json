@@ -22,7 +22,8 @@
     "sinon": "^1.11.1",
     "supertest": "^0.14.0",
     "underscore": "^1.7.0",
-    "uuid-v4": "^0.1.0"
+    "uuid-v4": "^0.1.0",
+    "eventstore-client": "kunzimariano/eventstore-client"
   },
   "scripts": {
     "test": "mocha -u exports -R spec test/**/*tests.js"
