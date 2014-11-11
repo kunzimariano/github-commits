@@ -9,7 +9,13 @@ var assert = require('assert'),
     'eventStore': eventStoreStub
   });
 
-controller.init(app);
+var configStub = {
+  eventStoreBaseUrl: '',
+  eventStoreUser: '',
+  eventStorePassword: ''
+}
+
+controller.init(app, configStub);
 
 describe('queryController', function() {
   describe('when I issue a workitem query for an asset that has no associated commits', function() {

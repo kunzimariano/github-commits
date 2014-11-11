@@ -7,7 +7,8 @@
   "dependencies": {
     "body-parser": "^1.6.3",
     "cors": "^2.4.1",
-    "express": "^4.8.3",
+    "eventstore-client": "kunzimariano/eventstore-client",
+    "express": "^4.10.2",
     "express-handlebars": "^1.1.0",
     "istanbul": "^0.3.2",
     "mocha": "^1.21.5",
@@ -21,8 +22,7 @@
     "sinon": "^1.11.1",
     "supertest": "^0.14.0",
     "underscore": "^1.7.0",
-    "uuid-v4": "^0.1.0",
-    "eventstore-client": "kunzimariano/eventstore-client"
+    "uuid-v4": "^0.1.0"
   },
   "scripts": {
     "test": "mocha -u exports -R spec test/**/*tests.js"
