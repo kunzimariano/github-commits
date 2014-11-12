@@ -6,7 +6,7 @@ var assert = require('assert'),
   proxyquire = require('proxyquire'),
   eventStoreStub = {},
   controller = proxyquire('../lib/queryController', {
-    'eventStore': eventStoreStub
+    'eventstore-client': eventStoreStub
   });
 
 var configStub = {
@@ -19,9 +19,9 @@ controller.init(app, configStub);
 
 describe('queryController', function() {
   describe('when I issue a workitem query for an asset that has no associated commits', function() {
-    eventStoreStub.getLastAssets = function(args, callback) {
-      callback(null, undefined);
-    };
+    // eventStoreStub.stream.get = function(args, callback) {
+    //   callback(null, undefined);
+    // };
 
     it('returns a 200 OK response with an empty commits array', function(done) {
       //exercise our api
