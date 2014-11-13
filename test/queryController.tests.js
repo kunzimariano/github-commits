@@ -4,7 +4,16 @@ var assert = require('assert'),
   app = express(),
   request = require('supertest'),
   proxyquire = require('proxyquire'),
-  eventStoreStub = {},
+  eventStoreStub = function() {
+    this.stream = {
+      get: function(args, callback) {
+        callback(null, {
+          statusCode: '404',
+          body: ''
+        });
+      }
+    }
+  },
   controller = proxyquire('../lib/queryController', {
     'eventstore-client': eventStoreStub
   });
@@ -19,9 +28,8 @@ controller.init(app, configStub);
 
 describe('queryController', function() {
   describe('when I issue a workitem query for an asset that has no associated commits', function() {
-    // eventStoreStub.stream.get = function(args, callback) {
-    //   callback(null, undefined);
-    // };
+
+
 
     it('returns a 200 OK response with an empty commits array', function(done) {
       //exercise our api
