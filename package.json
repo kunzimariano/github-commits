@@ -16,6 +16,7 @@
     "nconf": "^0.6.9",
     "node-json-db": "^0.3.2",
     "octonode": "^0.6.9",
+    "path": "^0.4.9",
     "proxyquire": "^1.0.1",
     "request": "^2.44.0",
     "request-json": "^0.4.13",
